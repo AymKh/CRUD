@@ -7,8 +7,13 @@
     $query = "SELECT * FROM users";
     $result = mysqli_query($conn, $query);
 ?>
-<a href="scripts/newUser.php" class="btn btn-success">New User</a>
-<table class="table table-bordered table-strpied">
+
+<div class="my-2">
+    <a href="scripts/newUser.php" class="button is-primary">
+        <i class="far fa-plus-square"></i>
+    </a>
+</div>
+<table class="table is-striped is-hoverable is-fullwidth">
     <tr>
         <td>ID</td>
         <td>Name</td>
@@ -26,8 +31,15 @@
             echo "<td>".$row['lastname']."</td>";
             echo "<td>".$row['email']."</td>";
             echo    "<td>
-                        <a href='scripts/edit.php?id=".$row['id']."'><button id=".$row['id']." class='btn btn-warning'>Update</button></a>
-                        <button id='".$row['id']."' class='delete btn btn-danger'>Delete</button>
+                        <a href='scripts/edit.php?id=".$row['id']."'>
+                            <button id=".$row['id']." class='button is-warning'>
+                                <i class='far fa-edit'></i>
+                            </button>
+                        </a>
+
+                        <button id='".$row['id']."' class='button is-danger' data-button='delete'>
+                            <i class='far fa-trash-alt'></i>
+                        </button>
                     </td>";
             echo "</tr>";
         }
