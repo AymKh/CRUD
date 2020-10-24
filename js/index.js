@@ -13,7 +13,7 @@ $(document).ready(()=>{
     }
     loadData()
 
-    $(document).on('click', ".delete", function(){
+    $(document).on('click', "button[data-button='delete']", function(){
         
         let id = $(this).attr("id")
         $.ajax({
